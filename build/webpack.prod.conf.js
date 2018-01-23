@@ -118,31 +118,31 @@ var webpackConfig = merge(baseWebpackConfig, {
         ignore: ['.*']
       }
     ]),
-    new PrerenderSpaPlugin(
-      path.join(__dirname, '../dist'),
-      ['/'],
-      {
-        postProcessHtml: function (context) {
-          var site = 'Site Name | '
-
-          var titles = {
-            '/': site + 'Home'
-          }
-
-          var descriptions = {
-            '/': 'Home page description'
-          }
-
-          return context.html.replace(
-            /<title>[^<]*<\/title>/g,
-            '<title>' + titles[context.route] + '</title>'
-          ).replace(
-            /<meta name="description">/g,
-            '<meta name="description" content="' + descriptions[context.route] + '">'
-          )
-        }
-      }
-    )
+    // new PrerenderSpaPlugin(
+    //   path.join(__dirname, '../dist'),
+    //   ['/'],
+    //   {
+    //     postProcessHtml: function (context) {
+    //       var site = 'Site Name | '
+    //
+    //       var titles = {
+    //         '/': site + 'Home'
+    //       }
+    //
+    //       var descriptions = {
+    //         '/': 'Home page description'
+    //       }
+    //
+    //       return context.html.replace(
+    //         /<title>[^<]*<\/title>/g,
+    //         '<title>' + titles[context.route] + '</title>'
+    //       ).replace(
+    //         /<meta name="description">/g,
+    //         '<meta name="description" content="' + descriptions[context.route] + '">'
+    //       )
+    //     }
+    //   }
+    // )
   ]
 })
 

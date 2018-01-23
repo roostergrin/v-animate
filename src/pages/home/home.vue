@@ -5,13 +5,14 @@ import Loader from 'components/loader/loader'
 
 export default {
   name: 'home',
-  computed: {
-    props () {
-      return this.$store.state.pages.home
-    },
-    loading () {
-      return this.$store.state.loading
+  data () {
+    return {
+      props: {},
+      loading: true
     }
+  },
+  created () {
+    this.loading = false
   },
   components: {
     Loader

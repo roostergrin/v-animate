@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '@/pages/home/home'
-import AboutUs from '@/pages/about-us/about-us'
 import PageNotFound from '@/pages/404/404'
 
 Vue.use(VueRouter)
@@ -13,11 +12,6 @@ const router = new VueRouter({
       path: '/',
       name: 'home',
       component: Home
-    },
-    {
-      path: '/about-us',
-      name: 'about-us',
-      component: AboutUs
     },
     {
       path: '/*',
